@@ -1,0 +1,30 @@
+[System]
+Name='FIS8_40_70'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='som'
+
+[Input1]
+Name='input1'
+Range=[0 25]
+NumMFs=2
+MF1='mala_predkosc':'gauss2mf',[0.000475 -0.0998 0.0737 0.00519105470213171]
+MF2='duza_dod_predkosc':'smf',[-0.302 1.47780126849894]
+
+[Output1]
+Name='output1'
+Range=[40 70]
+NumMFs=2
+MF1='male_kp':'gaussmf',[14 40]
+MF2='duze_kp':'gaussmf',[14 70]
+
+[Rules]
+1, 2 (1) : 1
+2, 1 (1) : 1
